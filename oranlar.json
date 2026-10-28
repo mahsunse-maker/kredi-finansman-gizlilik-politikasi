@@ -1,0 +1,71 @@
+{
+  "kaynak": "TCMB EVDS, bankalarca açılan kredilere ve mevduatlara uygulanan haftalık ağırlıklı ortalama faiz oranları (akım)",
+  "guncelleme": "2026-10-28",
+  "kredi": {
+    "ihtiyac": {
+      "oran": 61.5,
+      "tarih": "16-10-2026",
+      "tur": "efektif_yillik",
+      "seri": "TP.KTF10",
+      "ad": "İhtiyaç Kredisi (TL, Akım, %)"
+    },
+    "tasit": {
+      "oran": 43.63,
+      "tarih": "16-10-2026",
+      "tur": "efektif_yillik",
+      "seri": "TP.KTF11",
+      "ad": "Taşıt Kredisi (TL, Akım, %)"
+    },
+    "konut": {
+      "oran": 41.5,
+      "tarih": "16-10-2026",
+      "tur": "efektif_yillik",
+      "seri": "TP.KTF12",
+      "ad": "Konut Kredisi (TL, Akım, %)"
+    },
+    "ticari": {
+      "oran": 48.44,
+      "tarih": "16-10-2026",
+      "tur": "efektif_yillik",
+      "seri": "TP.KTF17",
+      "ad": "Ticari Krediler (TL, Akım, %)"
+    }
+  },
+  "mevduat": {
+    "1ay": {
+      "oran": 42.74,
+      "tarih": "16-10-2026",
+      "tur": "bilesik_yillik",
+      "seri": "TP.TRY.MT01",
+      "ad": "1 Aya Kadar Vadeli (TL Mevduat, Akım, %)"
+    },
+    "3ay": {
+      "oran": 43.22,
+      "tarih": "16-10-2026",
+      "tur": "bilesik_yillik",
+      "seri": "TP.TRY.MT02",
+      "ad": "3 Aya Kadar Vadeli (TL Mevduat, Akım, %)"
+    },
+    "6ay": {
+      "oran": 42.53,
+      "tarih": "16-10-2026",
+      "tur": "bilesik_yillik",
+      "seri": "TP.TRY.MT03",
+      "ad": "6 Aya Kadar Vadeli (TL Mevduat, Akım, %)"
+    },
+    "1yil": {
+      "oran": 41.22,
+      "tarih": "16-10-2026",
+      "tur": "bilesik_yillik",
+      "seri": "TP.TRY.MT04",
+      "ad": "1 Yıla Kadar Vadeli (TL Mevduat, Akım, %)"
+    },
+    "1yiluzun": {
+      "oran": 38.32,
+      "tarih": "16-10-2026",
+      "tur": "bilesik_yillik",
+      "seri": "TP.TRY.MT05",
+      "ad": "1 Yıl ve Daha Uzun Vadeli (TL Mevduat, Akım, %)"
+    }
+  }
+}
