@@ -69,9 +69,14 @@ def grup_bul(gruplar, gerekenler):
         if all(k in sade(g.get("DATAGROUP_NAME")) for k in gerekenler)
     ]
     if not adaylar:
+        ilgili = [
+            f"{g.get('DATAGROUP_CODE')}={g.get('DATAGROUP_NAME')}"
+            for g in gruplar
+            if "faiz" in sade(g.get("DATAGROUP_NAME"))
+        ]
         raise SystemExit(
-            f"Veri grubu bulunamadı: {gerekenler}. Örnek gruplar: "
-            + "; ".join(g.get("DATAGROUP_NAME", "") for g in gruplar[:40])
+            f"Veri grubu bulunamadı: {gerekenler}. Faizle ilgili gruplar: "
+            + " | ".join(ilgili)
         )
     # Ağırlıklı ortalama grubunu tercih et.
     adaylar.sort(key=lambda g: "agirlikli" not in sade(g.get("DATAGROUP_NAME")))
