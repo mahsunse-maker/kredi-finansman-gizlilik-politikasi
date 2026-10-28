@@ -13,6 +13,7 @@ import json
 import os
 import sys
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -28,12 +29,18 @@ def sade(metin):
 
 
 def istek(yol, parametreler, anahtar):
+    # EVDS parametreleri "?" olmadan doğrudan yolun ardına yazılır:
+    # .../serieList/type=json&code=...
     adres = TABAN + yol + "&".join(
-        f"{k}={urllib.parse.quote(str(v), safe='.-')}" for k, v in parametreler.items()
+        f"{k}={urllib.parse.quote(str(v), safe='.-_')}" for k, v in parametreler.items()
     )
     talep = urllib.request.Request(adres, headers={"key": anahtar})
-    with urllib.request.urlopen(talep, timeout=60) as yanit:
-        return json.loads(yanit.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(talep, timeout=60) as yanit:
+            return json.loads(yanit.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        govde = e.read().decode("utf-8", "replace")[:500]
+        raise SystemExit(f"EVDS {e.code}: {adres.split('?')[0]} → {govde}")
 
 
 # Her kalem: veri grubu adında geçmesi gerekenler, seri adında geçmesi
@@ -109,7 +116,7 @@ def son_degerler(kodlar, anahtar, bugun):
 
 
 def olustur(anahtar, bugun):
-    gruplar = istek("datagroups/?", {"mode": 0, "code": "", "type": "json"}, anahtar)
+    gruplar = istek("datagroups/", {"mode": 0, "code": "", "type": "json"}, anahtar)
     cikti = {
         "kaynak": "TCMB EVDS, bankalarca açılan kredilere ve mevduatlara "
         "uygulanan haftalık ağırlıklı ortalama faiz oranları (akım)",
@@ -121,7 +128,7 @@ def olustur(anahtar, bugun):
     ]:
         grup = grup_bul(gruplar, grup_kosulu)
         seriler = istek(
-            "serieList/?", {"type": "json", "code": grup["DATAGROUP_CODE"]}, anahtar
+            "serieList/", {"type": "json", "code": grup["DATAGROUP_CODE"]}, anahtar
         )
         secilen = {k: seri_bul(seriler, *v) for k, v in kalemler.items()}
         degerler = son_degerler([s["SERIE_CODE"] for s in secilen.values()], anahtar, bugun)
