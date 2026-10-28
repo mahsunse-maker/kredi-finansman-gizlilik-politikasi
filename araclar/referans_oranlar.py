@@ -45,8 +45,10 @@ def istek(yol, parametreler, anahtar):
 
 # Her kalem: veri grubu adında geçmesi gerekenler, seri adında geçmesi
 # gerekenler, geçmemesi gerekenler. Adlar sade() ile karşılaştırılır.
-KREDI_GRUBU = ["kredi", "akim", "haftalik"]
-MEVDUAT_GRUBU = ["mevduat", "akim", "haftalik"]
+# EVDS'de "Kredi Faiz Oranları (Akım)" (bie_kt100h) ve "Mevduat Faiz
+# Oranları (Akım)" (bie_mt100h); haftalık, ağırlıklı ortalama.
+KREDI_GRUBU = ["kredi faiz oranlari akim"]
+MEVDUAT_GRUBU = ["mevduat faiz oranlari akim"]
 
 KREDILER = {
     "ihtiyac": (["ihtiyac", "tl"], ["kmh dahil", "usd", "eur"]),

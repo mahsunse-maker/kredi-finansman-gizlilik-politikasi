@@ -9,10 +9,11 @@ import referans_oranlar as r
 
 GRUPLAR = [
     {"DATAGROUP_CODE": "bie_x", "DATAGROUP_NAME": "Döviz Kurları"},
+    {"DATAGROUP_CODE": "bie_kt210a", "DATAGROUP_NAME": "Kredi Faiz Oranları (Stok)"},
     {"DATAGROUP_CODE": "bie_kr", "DATAGROUP_NAME":
-        "Kredi Faiz Oranları (Akım) (Haftalık) (Ağırlıklı Ortalama)"},
+        "Kredi Faiz Oranları (Akım)"},
     {"DATAGROUP_CODE": "bie_mv", "DATAGROUP_NAME":
-        "Mevduat Faiz Oranları (Akım) (Haftalık) (Ağırlıklı Ortalama)"},
+        "Mevduat Faiz Oranları (Akım)"},
 ]
 KREDI_SERILERI = [
     {"SERIE_CODE": "K1", "SERIE_NAME": "İhtiyaç (TL Üzerinden Açılan)"},
