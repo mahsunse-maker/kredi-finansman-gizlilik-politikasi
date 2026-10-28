@@ -1,0 +1,40 @@
+# Haftada bir TCMB'den piyasa ortalaması oranları alır ve oranlar.json'u
+# günceller. GitHub Pages bu dosyayı uygulamaya sunar.
+# Gerekli gizli değişken: EVDS_API_KEY (Settings > Secrets > Actions).
+name: Referans oranlar
+
+on:
+  schedule:
+    # TCMB haftalık kredi faizlerini cuma günü yayımlar; cumartesi 09:00 TSİ.
+    - cron: "0 6 * * 6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testler
+        working-directory: araclar
+        run: python -m unittest test_referans_oranlar
+      - name: Oranları al
+        env:
+          EVDS_API_KEY: ${{ secrets.EVDS_API_KEY }}
+        run: python araclar/referans_oranlar.py oranlar.json
+      - name: Değiştiyse kaydet
+        run: |
+          if git diff --quiet -- oranlar.json && git ls-files --error-unmatch oranlar.json >/dev/null 2>&1; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+          git config user.name "referans-oranlar"
+          git config user.email "actions@users.noreply.github.com"
+          git add oranlar.json
+          git commit -m "Referans oranlar: $(date +%Y-%m-%d)"
+          git push
