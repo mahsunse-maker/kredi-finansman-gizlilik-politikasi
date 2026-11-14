@@ -4,7 +4,7 @@
 <style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222}h1{color:#0B7A5A}h2{margin-top:28px}hr{margin:40px 0;border:0;border-top:1px solid #ddd}</style></head>
 <body>
 <h1>Gizlilik Politikası</h1>
-<p><strong>Uygulama:</strong> Vadelio – Kredi, çek ve mevduat hesaplama (eski adı: Kredi Finansman Hesaplama)<br><strong>Son güncelleme:</strong> 29 Ekim 2026</p>
+<p><strong>Uygulama:</strong> Vadelio – Kredi, çek ve mevduat hesaplama (eski adı: Kredi Finansman Hesaplama)<br><strong>Son güncelleme:</strong> 14 Kasım 2026</p>
 
 <h2>Özet</h2>
 <p>Vadelio bir hesaplama aracıdır. Hesap açmanızı istemez; kişisel veri toplamaz, sunuculara veri göndermez, reklam, analiz veya takip hizmeti içermez. Girdiğiniz bilgiler yalnızca cihazınızda kalır.</p>
@@ -12,7 +12,8 @@
 <h2>Cihazda saklanan bilgiler</h2>
 <ul>
 <li><strong>Hesaplamalar:</strong> Tutar, oran, vade ve tarih bilgileri yalnızca cihazınızda hesaplama için kullanılır.</li>
-<li><strong>Çek portföyü:</strong> Elle eklediğiniz ya da dosyadan yüklediğiniz çeklerin vade, tutar, keşideci, çek numarası ve banka bilgileri uygulamanın cihazdaki klasöründe saklanır.</li>
+<li><strong>Çek portföyü:</strong> Elle, kamerayla ya da dosyadan eklediğiniz alınan ve verilen çeklerin vade, tutar, keşideci, lehdar, çek numarası, banka, şube ve hesap bilgileri, çekin durumu (ciro, tahsil, bankaya verildiği banka) ve nakit akışı için girdiğiniz açılış bakiyesi uygulamanın cihazdaki klasöründe saklanır.</li>
+<li><strong>Ayarlar:</strong> Hatırlatmaların açık olup olmadığı ve güncelleme uyarısının hangi sürüm için gösterildiği yalnızca cihazınızda saklanır.</li>
 <li><strong>Firma bilgileri:</strong> PDF'lerde görünmesi için girdiğiniz firma adı, unvan, telefon, e-posta, web adresi, adres ve logo yalnızca cihazınızda saklanır.</li>
 </ul>
 <p>Bu bilgiler bize ya da üçüncü kişilere gönderilmez. Uygulamayı sildiğinizde cihazdaki bu veriler de silinir.</p>
@@ -20,8 +21,16 @@
 <h2>Dosyalar</h2>
 <p>Excel (.xlsx) ya da CSV çek listesi yüklediğinizde dosya yalnızca cihazınızda okunur. Uygulama yalnızca sizin seçtiğiniz ya da başka bir uygulamadan "Birlikte aç / Paylaş" ile gönderdiğiniz dosyaya erişir. Logo seçerken de yalnızca seçtiğiniz resim okunur.</p>
 
+<h2>Kamera ve fotoğraflar</h2>
+<p>Çeki kamerayla ya da galeriden fotoğrafla eklediğinizde görüntü yalnızca telefonunuzda, telefonun kendi yazı ve karekod tanımasıyla okunur (iPhone'da Apple'ın cihaz içi tanıması, Android'de uygulamanın içine gömülü tanıma; internet kullanılmaz). Fotoğraf ve kamera görüntüsü saklanmaz, hiçbir sunucuya gönderilmez; yalnızca sizin onay ekranında kontrol edip kaydettiğiniz çek bilgileri (tutar, vade, banka, seri no gibi) cihazınızdaki çek listesine eklenir. Kamera ve fotoğraf izni yalnızca bu özellik için istenir.</p>
+<p>Okunan çekte gösterilen ön kontrol (tarih, tutar, karekod, ibraz süresi) de cihazda yapılır. "Findeks'te sorgula" düğmesi tarayıcınızda findeks.com sayfasını açar; uygulama oraya çek bilgisi göndermez.</p>
+
+<h2>Bildirimler</h2>
+<p>Çek hatırlatmalarını açarsanız uygulama, verilen çeklerin ödeme gününden 7 gün önce ve ödeme günü, alınan çeklerin vade günü ve bankaya ibraz süresi bitmeden önce telefonunuzda yerel bildirim kurar. Bildirimler cihazın kendi zamanlayıcısıyla gösterilir; sunucu ya da itme bildirimi kullanılmaz, çek bilgileri hiçbir yere gönderilmez. Bildirimde lehdar ya da keşideci adı yer almaz, yalnızca çek adedi ve toplam tutar görünür. Hatırlatmayı uygulamadan ya da telefonun ayarlarından kapatabilirsiniz.</p>
+
 <h2>İnternet bağlantısı</h2>
 <p>Uygulama, "piyasa ortalaması" oranlarını göstermek için haftada bir güncellenen herkese açık bir oran dosyasını (TCMB verilerinden derlenen <code>oranlar.json</code>) GitHub Pages üzerinden indirir. Bu istekte sizinle ilgili hiçbir bilgi gönderilmez; dosyayı barındıran GitHub, her web isteğinde olduğu gibi teknik kayıtları (ör. IP adresi) kendi politikasına göre tutabilir. İnternet yoksa uygulama son indirilen oranlarla ya da oransız çalışmaya devam eder.</p>
+<p>Uygulama ayrıca açılışta, herkese açık bir sürüm dosyasını (<code>vadelio.com.tr/surum.json</code>) indirerek mağazada daha yeni bir sürüm olup olmadığına bakar; varsa güncellemeyi önerir. Bu istekte de sizinle ilgili hiçbir bilgi gönderilmez. İnternet yoksa denetim yapılmaz.</p>
 
 <h2>Vadelio Pro aboneliği</h2>
 <p>Pro aboneliği ve ücretsiz deneme süresi Apple App Store ya da Google Play üzerinden satın alınır ve yönetilir. Ödeme bilgileriniz bu mağazalar tarafından işlenir; uygulama ödeme bilgilerinize erişmez, yalnızca mağazanın bildirdiği abonelik durumunu kullanır. Aboneliğinizi mağaza hesabınızın ayarlarından istediğiniz zaman iptal edebilirsiniz.</p>
@@ -46,9 +55,11 @@
 <h1>Privacy Policy (English summary)</h1>
 <p>Vadelio is a calculation tool for loans, cheques and deposits. It requires no account and collects no personal data. It contains no ads, analytics or tracking.</p>
 <ul>
-<li>Calculations, the cheque portfolio and the optional company details and logo shown on PDFs are stored only on your device and are never sent to us or to third parties.</li>
+<li>Calculations, the cheque portfolio (received and issued cheques, their status and bank details, the cash-flow opening balance) and the optional company details and logo shown on PDFs are stored only on your device and are never sent to us or to third parties.</li>
 <li>Excel/CSV files you choose are read only on the device.</li>
-<li>The only network request downloads a public, weekly-updated rates file (<code>oranlar.json</code>, based on Central Bank of the Republic of Türkiye data) from GitHub Pages; no user data is sent.</li>
+<li>When you add cheques with the camera or from a photo, the image is read on your device only (on-device text and barcode recognition, no internet). Images are not stored or sent anywhere; only the cheque details you confirm are saved on your device.</li>
+<li>If you turn on cheque reminders, the app schedules local notifications on your device (issued cheques: 7 days before and on the payment day; received cheques: due date and presentment deadline). Nothing is sent to a server; notifications show only the number of cheques and the total amount.</li>
+<li>The app makes only two network requests: it downloads a public, weekly-updated rates file (<code>oranlar.json</code>, based on Central Bank of the Republic of Türkiye data) from GitHub Pages, and a public version file (<code>vadelio.com.tr/surum.json</code>) at launch to suggest updating when a newer version is available. No user data is sent.</li>
 <li>Vadelio Pro subscriptions and free trials are handled by the App Store or Google Play; the app never sees your payment details.</li>
 <li>Results are estimates for information only. Vadelio does not lend money or broker loans.</li>
 </ul>
